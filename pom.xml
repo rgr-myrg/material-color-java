@@ -1,0 +1,129 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<groupId>net.usrlib</groupId>
+	<artifactId>material-color</artifactId>
+	<version>0.1</version>
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>jar</packaging>
+
+	<name>Material Color</name>
+	<description>
+		Beautiful Material Color Themes
+	</description>
+	<url>https://github.com/rgr-myrg/material-color-java</url>
+
+	<properties>
+		<junit.version>4.11</junit.version>
+		<jdk.version>1.8</jdk.version>
+		<maven-compiler.version>3.5.1</maven-compiler.version>
+		<javadoc.version>2.9.1</javadoc.version>
+		<maven-source.version>3.0.0</maven-source.version>
+		<maven-resources.version>2.7</maven-resources.version>
+		<copy-rename-maven.version>1.0.1</copy-rename-maven.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler.version}</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${javadoc.version}</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${maven-source.version}</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${maven-resources.version}</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}</directory>
+									<filtering>true</filtering>
+									<includes>
+										<include>pom.xml</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>com.coderplus.maven.plugins</groupId>
+				<artifactId>copy-rename-maven-plugin</artifactId>
+				<version>${copy-rename-maven.version}</version>
+				<executions>
+				<execution>
+					<id>rename-file</id>
+					<phase>compile</phase>
+					<goals>
+						<goal>rename</goal>
+					</goals>
+					<configuration>
+					<sourceFile>
+						${basedir}/target/pom.xml
+					</sourceFile>
+					<destinationFile>
+						${basedir}/target/${project.artifactId}-${project.version}.pom
+					</destinationFile>
+					</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
