@@ -22,9 +22,12 @@ import java.util.List;
 
 import net.usrlib.material.color.Amber;
 import net.usrlib.material.color.Blue;
+import net.usrlib.material.color.BlueGray;
+import net.usrlib.material.color.Brown;
 import net.usrlib.material.color.Cyan;
 import net.usrlib.material.color.DeepOrange;
 import net.usrlib.material.color.DeepPurple;
+import net.usrlib.material.color.Gray;
 import net.usrlib.material.color.Green;
 import net.usrlib.material.color.Indigo;
 import net.usrlib.material.color.LightBlue;
@@ -40,28 +43,32 @@ import net.usrlib.material.color.Yellow;
 public class MaterialTheme {
 	private List<ColorCode> mPalette;
 	private int mColorIndex = 0;
+	private final int mThemeValue;
 
 	public MaterialTheme(Theme theme) {
-		final int index = theme.getValue();
+		mThemeValue = theme.getValue();
 
 		// Load this Palette
 		this.mPalette = Arrays.asList(
-				Red.COLOR_LIST.get(index),
-				Pink.COLOR_LIST.get(index),
-				Purple.COLOR_LIST.get(index),
-				DeepPurple.COLOR_LIST.get(index),
-				Indigo.COLOR_LIST.get(index),
-				Blue.COLOR_LIST.get(index),
-				LightBlue.COLOR_LIST.get(index),
-				Cyan.COLOR_LIST.get(index),
-				Teal.COLOR_LIST.get(index),
-				Green.COLOR_LIST.get(index),
-				LightGreen.COLOR_LIST.get(index),
-				Lime.COLOR_LIST.get(index),
-				Yellow.COLOR_LIST.get(index),
-				Amber.COLOR_LIST.get(index),
-				Orange.COLOR_LIST.get(index),
-				DeepOrange.COLOR_LIST.get(index)
+				getColorFromList(Red.COLOR_LIST),
+				getColorFromList(Pink.COLOR_LIST),
+				getColorFromList(Purple.COLOR_LIST),
+				getColorFromList(DeepPurple.COLOR_LIST),
+				getColorFromList(Indigo.COLOR_LIST),
+				getColorFromList(Blue.COLOR_LIST),
+				getColorFromList(LightBlue.COLOR_LIST),
+				getColorFromList(Cyan.COLOR_LIST),
+				getColorFromList(Teal.COLOR_LIST),
+				getColorFromList(Green.COLOR_LIST),
+				getColorFromList(LightGreen.COLOR_LIST),
+				getColorFromList(Lime.COLOR_LIST),
+				getColorFromList(Yellow.COLOR_LIST),
+				getColorFromList(Amber.COLOR_LIST),
+				getColorFromList(Orange.COLOR_LIST),
+				getColorFromList(DeepOrange.COLOR_LIST),
+				getColorFromList(Brown.COLOR_LIST),
+				getColorFromList(Gray.COLOR_LIST),
+				getColorFromList(BlueGray.COLOR_LIST)
 		);
 	}
 
@@ -84,5 +91,9 @@ public class MaterialTheme {
 
 	public static final MaterialTheme getTheme(Theme theme) {
 		return new MaterialTheme(theme);
+	}
+
+	private ColorCode getColorFromList(final List<ColorCode> list) {
+		return mThemeValue < list.size() - 1 ? list.get(mThemeValue) : list.get(0);
 	}
 }

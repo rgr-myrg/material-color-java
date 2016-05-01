@@ -34,7 +34,9 @@ public enum MaterialColor {
 	AMBER(),
 	ORANGE(),
 	DEEP_ORANGE(),
-	BROWN();
+	BROWN(),
+	GRAY(),
+	BLUE_GRAY();
 
 	private int mValue;
 

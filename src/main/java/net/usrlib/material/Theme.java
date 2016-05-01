@@ -18,7 +18,6 @@
 package net.usrlib.material;
 
 public enum Theme {
-	LIGHT(),
 	TWILIGHT(),
 	HARVEST_MOON(),
 	COOL(),
