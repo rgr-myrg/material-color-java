@@ -39,14 +39,14 @@
 
 <p>Of course, no Material Design is complete without Material Colors. This library offers rich and vibrant color palettes for Android and Java Apps. Usage is straightforward and both <em>hex</em> and <em>rgb</em> codes are available.</p>
 
-<h3>
-<a id="code-sample" class="anchor" href="#code-sample" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Code Sample</h3>
+<h2>
+<a id="code-sample" class="anchor" href="#code-sample" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Code Sample</h2>
 
 <p>Load a palette based on already defined themes. For example:</p>
 
 <div class="highlight highlight-source-java"><pre><span class="pl-smi">MaterialTheme</span> theme <span class="pl-k">=</span> <span class="pl-smi">MaterialTheme</span><span class="pl-k">.</span>get(<span class="pl-smi">Theme</span><span class="pl-c1"><span class="pl-k">.</span>SAHARA</span>);</pre></div>
 
-<p>Retrieve the <em>BLUE</em> shade of this theme and set it to a View in your app:</p>
+<p>Retrieve the <em>Blue</em> shade of this theme and set it to a View in your app:</p>
 
 <div class="highlight highlight-source-java"><pre><span class="pl-smi">ColorCode</span> materialBlue <span class="pl-k">=</span> theme<span class="pl-k">.</span>getColor(<span class="pl-smi">MaterialColor</span><span class="pl-c1"><span class="pl-k">.</span>BLUE</span>);
 view<span class="pl-k">.</span>getBackground()<span class="pl-k">.</span>setColorFilter(
@@ -64,16 +64,25 @@ view<span class="pl-k">.</span>getBackground()<span class="pl-k">.</span>setColo
 <span class="pl-c">// Select Blue 500 hex value: #2196F3</span>
 <span class="pl-smi">String</span> hexValue <span class="pl-k">=</span> <span class="pl-smi">Blue</span><span class="pl-k">.</span>_500<span class="pl-k">.</span>hex;</pre></div>
 
-<h3>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h3>
+<h2>
+<a id="screen-shot" class="anchor" href="#screen-shot" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screen Shot</h2>
 
-<h4>
-<a id="gradle" class="anchor" href="#gradle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gradle</h4>
+<p>
+  The ListView below was created dynamically from a json array of movie reviews. Each icon's background color invokes <i>theme.getNextColor()</i> to move to the next color in the palette. This feature provides a visual language to the UI and vividly accentuates each list item.
+</p>
+
+<img src="images/material-color-app-1.png" alt="Material Color App Screenshot">
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a id="gradle" class="anchor" href="#gradle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gradle</h3>
 
 <div class="highlight highlight-source-java"><pre>compile <span class="pl-s"><span class="pl-pds">'</span>net.usrlib:material-color:0.1<span class="pl-pds">'</span></span></pre></div>
 
-<h4>
-<a id="maven" class="anchor" href="#maven" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Maven</h4>
+<h3>
+<a id="maven" class="anchor" href="#maven" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Maven</h3>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dependency</span>&gt;
   &lt;<span class="pl-ent">groupId</span>&gt;net.usrlib&lt;/<span class="pl-ent">groupId</span>&gt;
@@ -82,32 +91,32 @@ view<span class="pl-k">.</span>getBackground()<span class="pl-k">.</span>setColo
   &lt;<span class="pl-ent">type</span>&gt;pom&lt;/<span class="pl-ent">type</span>&gt;
 &lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
 
-<h4>
-<a id="ivy" class="anchor" href="#ivy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ivy</h4>
+<h3>
+<a id="ivy" class="anchor" href="#ivy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ivy</h3>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dependency</span> <span class="pl-e">org</span>=<span class="pl-s"><span class="pl-pds">'</span>net.usrlib<span class="pl-pds">'</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">'</span>material-color<span class="pl-pds">'</span></span> <span class="pl-e">rev</span>=<span class="pl-s"><span class="pl-pds">'</span>0.1<span class="pl-pds">'</span></span>&gt;
   &lt;<span class="pl-ent">artifact</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">'</span>$AID<span class="pl-pds">'</span></span> <span class="pl-e">ext</span>=<span class="pl-s"><span class="pl-pds">'</span>pom<span class="pl-pds">'</span></span>&gt;&lt;/<span class="pl-ent">artifact</span>&gt;
 &lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
 
-<h3>
-<a id="version" class="anchor" href="#version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version</h3>
+<h2>
+<a id="version" class="anchor" href="#version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version</h2>
 
 <p>0.1</p>
 
-<h3>
-<a id="tech" class="anchor" href="#tech" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tech</h3>
+<h2>
+<a id="tech" class="anchor" href="#tech" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tech</h2>
 
 <p>Color codes are based on the Material Design Color Chart from <a href="http://htmlcolorcodes.com/color-chart/material-design-color-chart">HtmlColorCodes.com</a></p>
 
 <img src="images/material-design-color-chart.png" alt="Material Design Colors">
 
-<h3>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
 <p><a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a></p>
 
-<h3>
-<a id="links" class="anchor" href="#links" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Links</h3>
+<h2>
+<a id="links" class="anchor" href="#links" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Links</h2>
 
 <ul>
 <li><a href="https://bintray.com/rgr-myrg/maven/material-color-java/view">Material Color on Bintray</a></li>
