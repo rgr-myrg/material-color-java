@@ -94,6 +94,6 @@ public class MaterialTheme {
 	}
 
 	private ColorCode getColorFromList(final List<ColorCode> list) {
-		return mThemeValue < list.size() - 1 ? list.get(mThemeValue) : list.get(0);
+		return mThemeValue > list.size() - 1 ? list.get(0) : list.get(mThemeValue);
 	}
 }
