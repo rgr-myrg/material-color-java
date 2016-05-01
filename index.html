@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Material Color by rgr-myrg</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Material Color</h1>
+        <h2>Beautiful Material Color Themes for Android and Java Apps</h2>
+        <a href="https://github.com/rgr-myrg/material-color-java" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="material-colors" class="anchor" href="#material-colors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Material Colors</h1>
+
+<p><strong>Bold, graphic, intentional.</strong></p>
+
+<blockquote>
+<p>Deliberate color choices, edge-to-edge imagery, large-scale typography, and intentional white space create a bold and graphic interface that immerse the user in the experience. -- Google</p>
+</blockquote>
+
+<p>Of course, no Material Design is complete without Material Colors. This library offers rich and vibrant color palettes for Android and Java Apps. Usage is straightforward and both <em>hex</em> and <em>rgb</em> codes are available.</p>
+
+<h3>
+<a id="code-sample" class="anchor" href="#code-sample" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Code Sample</h3>
+
+<p>Load a palette based on already defined themes. For example:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">MaterialTheme</span> theme <span class="pl-k">=</span> <span class="pl-smi">MaterialTheme</span><span class="pl-k">.</span>get(<span class="pl-smi">Theme</span><span class="pl-c1"><span class="pl-k">.</span>SAHARA</span>);</pre></div>
+
+<p>Retrieve the <em>BLUE</em> shade of this theme and set it to a View in your app:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">ColorCode</span> materialBlue <span class="pl-k">=</span> theme<span class="pl-k">.</span>getColor(<span class="pl-smi">MaterialColor</span><span class="pl-c1"><span class="pl-k">.</span>BLUE</span>);
+view<span class="pl-k">.</span>getBackground()<span class="pl-k">.</span>setColorFilter(
+    <span class="pl-smi">Color</span><span class="pl-k">.</span>parseColor(materialBlue<span class="pl-k">.</span>hex),
+    <span class="pl-smi">PorterDuff</span><span class="pl-k">.</span><span class="pl-smi">Mode</span><span class="pl-c1"><span class="pl-k">.</span>SRC</span>
+);</pre></div>
+
+<p>Optionally, you can simply select the next shade of color in the current palette:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">ColorCode</span> materialColor <span class="pl-k">=</span> theme<span class="pl-k">.</span>getNextColor();</pre></div>
+
+<p>Or, select the shade of color directly from color objects defined in <strong>material.color</strong> package:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">import</span> <span class="pl-smi">net.usrlib.material.color.Blue</span>;
+<span class="pl-c">// Select Blue 500 hex value: #2196F3</span>
+<span class="pl-smi">String</span> hexValue <span class="pl-k">=</span> <span class="pl-smi">Blue</span><span class="pl-k">.</span>_500<span class="pl-k">.</span>hex;</pre></div>
+
+<h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h3>
+
+<h4>
+<a id="gradle" class="anchor" href="#gradle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gradle</h4>
+
+<div class="highlight highlight-source-java"><pre>compile <span class="pl-s"><span class="pl-pds">'</span>net.usrlib:material-color:0.1<span class="pl-pds">'</span></span></pre></div>
+
+<h4>
+<a id="maven" class="anchor" href="#maven" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Maven</h4>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dependency</span>&gt;
+  &lt;<span class="pl-ent">groupId</span>&gt;net.usrlib&lt;/<span class="pl-ent">groupId</span>&gt;
+  &lt;<span class="pl-ent">artifactId</span>&gt;material-color&lt;/<span class="pl-ent">artifactId</span>&gt;
+  &lt;<span class="pl-ent">version</span>&gt;0.1&lt;/<span class="pl-ent">version</span>&gt;
+  &lt;<span class="pl-ent">type</span>&gt;pom&lt;/<span class="pl-ent">type</span>&gt;
+&lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
+
+<h4>
+<a id="ivy" class="anchor" href="#ivy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ivy</h4>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dependency</span> <span class="pl-e">org</span>=<span class="pl-s"><span class="pl-pds">'</span>net.usrlib<span class="pl-pds">'</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">'</span>material-color<span class="pl-pds">'</span></span> <span class="pl-e">rev</span>=<span class="pl-s"><span class="pl-pds">'</span>0.1<span class="pl-pds">'</span></span>&gt;
+  &lt;<span class="pl-ent">artifact</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">'</span>$AID<span class="pl-pds">'</span></span> <span class="pl-e">ext</span>=<span class="pl-s"><span class="pl-pds">'</span>pom<span class="pl-pds">'</span></span>&gt;&lt;/<span class="pl-ent">artifact</span>&gt;
+&lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
+
+<h3>
+<a id="version" class="anchor" href="#version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version</h3>
+
+<p>0.1</p>
+
+<h3>
+<a id="tech" class="anchor" href="#tech" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tech</h3>
+
+<p>Color codes are based on the Material Design Color Chart from <a href="http://htmlcolorcodes.com/color-chart/material-design-color-chart">HtmlColorCodes.com</a></p>
+
+<h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>
+
+<p><a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a></p>
+
+<h3>
+<a id="links" class="anchor" href="#links" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Links</h3>
+
+<ul>
+<li><a href="https://bintray.com/rgr-myrg/maven/material-color-java/view">Material Color on Bintray</a></li>
+<li><a href="https://github.com/rgr-myrg/material-color-java">Material Color Github Repo</a></li>
+<li><a href="http://rgr-myrg.github.io/material-color-java/javadoc">Material Color Java Docs</a></li>
+<li><a href="https://github.com/rgr-myrg/material-color-java/issues">Material Color Track Issues</a></li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/rgr-myrg/material-color-java/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/rgr-myrg/material-color-java/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/rgr-myrg/material-color-java"></a> is maintained by <a href="https://github.com/rgr-myrg">rgr-myrg</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
