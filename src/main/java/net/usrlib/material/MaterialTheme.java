@@ -89,7 +89,7 @@ public class MaterialTheme {
 		return selectedColor;
 	}
 
-	public static final MaterialTheme getTheme(Theme theme) {
+	public static final MaterialTheme get(Theme theme) {
 		return new MaterialTheme(theme);
 	}
 

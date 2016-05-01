@@ -8,7 +8,7 @@ import net.usrlib.material.color.*;
 public class MaterialColorTest extends TestCase {
 	@Test
 	public void testGetTheme() {
-		MaterialTheme theme = MaterialTheme.getTheme(Theme.OBSIDIAN);
+		MaterialTheme theme = MaterialTheme.get(Theme.OBSIDIAN);
 
 		assertTrue(
 				"MaterialColor.getTheme should return a valid object of the type MaterialTheme", 
@@ -17,7 +17,7 @@ public class MaterialColorTest extends TestCase {
 	}
 	@Test
 	public void testGetColor() {
-		MaterialTheme theme = MaterialTheme.getTheme(Theme.OBSIDIAN);
+		MaterialTheme theme = MaterialTheme.get(Theme.OBSIDIAN);
 		ColorCode colorCode = theme.getColor(MaterialColor.BLUE);
 		String hexValue = Blue.COLOR_LIST.get(Theme.OBSIDIAN.getValue()).hex;
 
@@ -28,7 +28,7 @@ public class MaterialColorTest extends TestCase {
 	}
 	@Test
 	public void testGetNextColor() {
-		MaterialTheme theme = MaterialTheme.getTheme(Theme.SAHARA);
+		MaterialTheme theme = MaterialTheme.get(Theme.SAHARA);
 		ColorCode colorCode = theme.getNextColor();
 		// Red is always the first color on the palette
 		String hexValue = Red.COLOR_LIST.get(Theme.SAHARA.getValue()).hex;
