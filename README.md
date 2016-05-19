@@ -34,26 +34,26 @@ String hexValue = Blue._500.hex;
 ### Installation
 #### Gradle
 ```java
-compile 'net.usrlib:material-color:0.1'
+compile 'net.usrlib:material-color:0.2'
 ```
 #### Maven
 ```xml
 <dependency>
   <groupId>net.usrlib</groupId>
   <artifactId>material-color</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
   <type>pom</type>
 </dependency>
 ```
 #### Ivy
 ```xml
-<dependency org='net.usrlib' name='material-color' rev='0.1'>
+<dependency org='net.usrlib' name='material-color' rev='0.2'>
   <artifact name='$AID' ext='pom'></artifact>
 </dependency>
 ```
 
 ### Version
-0.1
+0.2
 
 ### Tech
 Color codes are based on the Material Design Color Chart from [HtmlColorCodes.com][HtmlColorCodes]
